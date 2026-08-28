@@ -1,34 +1,35 @@
+<meta charset="utf-8">
 <section style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem; font-family: sans-serif; color: #212529;">
     <h1 style="text-align: center; color: #714B67;">ABC Team Stage Filter (Free)</h1>
     <p style="text-align: center; font-size: 1.15rem;">
         A small team selector next to the Kanban view-switcher icons that
-        scopes the board — records <strong>and stage columns</strong> — to
+        scopes the board &mdash; records <strong>and stage columns</strong> &mdash; to
         one sales team at a time. Built for the CRM Pipeline, works with
         Helpdesk and any other team + stage combo out of the box.
     </p>
 
     <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 2rem 0;">
         <div style="flex: 1 1 380px; border: 1px solid #dee2e6; border-radius: 8px; padding: 1.25rem;">
-            <h3 style="margin-top: 0;">🧩 Two teams, one merged mess</h3>
+            <h3 style="margin-top: 0;">&#129513; Two teams, one merged mess</h3>
             <p>
                 As soon as a company has <strong>two or more sales teams</strong>,
                 each with its own funnel, the shared Pipeline Kanban shows
-                every team's stages mixed into one board — a Sales team sees
+                every team's stages mixed into one board &mdash; a Sales team sees
                 Purchasing's stages, Support sees Renewals', and nobody's
                 funnel reads clean anymore.
             </p>
             <p>
                 Odoo's own "show every stage always" behavior for Kanban
                 columns is by design (so a stage never silently disappears)
-                — it just means nothing narrows the board for you
+                &mdash; it just means nothing narrows the board for you
                 automatically. This control does.
             </p>
         </div>
         <div style="flex: 1 1 380px; border: 1px solid #dee2e6; border-radius: 8px; padding: 1.25rem;">
-            <h3 style="margin-top: 0;">👥 One board, two audiences</h3>
+            <h3 style="margin-top: 0;">&#128101; One board, two audiences</h3>
             <p>
                 <strong>Administrators and managers</strong> overseeing every
-                team still want the full merged view — nothing changes for
+                team still want the full merged view &mdash; nothing changes for
                 them unless they ask: leave the selector on
                 <em>"All teams"</em> and the board looks exactly like it
                 always has.
@@ -37,7 +38,7 @@
                 <strong>Salespeople and team leads</strong> who only work
                 one funnel want the opposite: pick their own team from the
                 same selector, and the board narrows to just their stages
-                and their records — no scrolling past columns that aren't
+                and their records &mdash; no scrolling past columns that aren't
                 theirs, no cards from a team they don't manage. Same
                 control, same click, whichever way someone needs to see
                 their day.
@@ -48,11 +49,11 @@
     <h2>How it works</h2>
     <ul>
         <li>The selector shows up automatically once a user belongs to
-            <strong>2 or more teams</strong> for the model — for everyone
+            <strong>2 or more teams</strong> for the model &mdash; for everyone
             else, nothing changes at all.</li>
         <li>Picking a team filters the Kanban's records to that team
             <em>and</em> hides every stage column that isn't the team's own
-            (or shared across teams) — computed from the team relation on
+            (or shared across teams) &mdash; computed from the team relation on
             the stage model itself, not guessed.</li>
         <li>The choice is remembered per user, per database, so it's still
             set the next time that person opens the Pipeline.</li>
@@ -77,7 +78,7 @@ registerTeamStageModel("helpdesk.ticket", {
 
     <h2>Zero setup, zero risk</h2>
     <ul>
-        <li>No configuration screen, no new menu, no business models —
+        <li>No configuration screen, no new menu, no business models &mdash;
             pure frontend.</li>
         <li>Installing it changes nothing until a user actually belongs to
             2+ teams. Uninstalling it removes the selector cleanly.</li>
@@ -86,18 +87,18 @@ registerTeamStageModel("helpdesk.ticket", {
 
     <hr style="margin: 2.5rem 0; border: none; border-top: 1px solid #dee2e6;">
 
-    <h2 style="color: #714B67;">Español</h2>
+    <h2 style="color: #714B67;">Espa&ntilde;ol</h2>
     <p>
-        Cuando una empresa tiene <strong>dos o más equipos de venta</strong>,
+        Cuando una empresa tiene <strong>dos o m&aacute;s equipos de venta</strong>,
         cada uno con su propio embudo, el Pipeline compartido mezcla las
         etapas de todos los equipos en un solo tablero. Los
         <strong>administradores</strong> que supervisan todo suelen querer
-        seguir viéndolo así — con "Todos los equipos" no cambia nada para
-        ellos. Pero también hay <strong>vendedores y líderes de equipo</strong>
+        seguir vi&eacute;ndolo as&iacute; &mdash; con "Todos los equipos" no cambia nada para
+        ellos. Pero tambi&eacute;n hay <strong>vendedores y l&iacute;deres de equipo</strong>
         que solo trabajan un embudo y quieren organizarse mejor: al elegir
         su propio equipo en el mismo selector, el tablero se limita a sus
         etapas y sus registros. Mismo control, mismo clic, para las dos
-        formas de querer ver el día.
+        formas de querer ver el d&iacute;a.
     </p>
 
     <h2 style="color: #714B67;">Deutsch</h2>
@@ -105,31 +106,31 @@ registerTeamStageModel("helpdesk.ticket", {
         Sobald ein Unternehmen <strong>zwei oder mehr Verkaufsteams</strong>
         hat, von denen jedes seinen eigenen Trichter hat, mischt die
         gemeinsame Pipeline die Phasen aller Teams in einem Board.
-        <strong>Administratoren</strong>, die alles überblicken, wollen
-        meist weiterhin die Gesamtansicht — mit "Alle Teams" ändert sich für
+        <strong>Administratoren</strong>, die alles &uuml;berblicken, wollen
+        meist weiterhin die Gesamtansicht &mdash; mit "Alle Teams" &auml;ndert sich f&uuml;r
         sie nichts. Es gibt aber auch <strong>Vertriebsmitarbeiter und
         Teamleiter</strong>, die nur an einem Trichter arbeiten und sich
-        besser organisieren wollen: Wählen sie ihr eigenes Team in derselben
-        Auswahl, beschränkt sich das Board auf ihre Phasen und Datensätze.
+        besser organisieren wollen: W&auml;hlen sie ihr eigenes Team in derselben
+        Auswahl, beschr&auml;nkt sich das Board auf ihre Phasen und Datens&auml;tze.
 
     </p>
 
-    <h2 style="color: #714B67;">Français</h2>
+    <h2 style="color: #714B67;">Fran&ccedil;ais</h2>
     <p>
-        Dès qu'une entreprise a <strong>deux équipes commerciales ou
+        D&egrave;s qu'une entreprise a <strong>deux &eacute;quipes commerciales ou
         plus</strong>, chacune avec son propre entonnoir, le Pipeline
-        partagé mélange les étapes de toutes les équipes sur un seul
+        partag&eacute; m&eacute;lange les &eacute;tapes de toutes les &eacute;quipes sur un seul
         tableau. Les <strong>administrateurs</strong> qui supervisent tout
-        veulent généralement garder cette vue d'ensemble — avec "Toutes les
-        équipes", rien ne change pour eux. Mais il y a aussi des
-        <strong>commerciaux et des chefs d'équipe</strong> qui ne
+        veulent g&eacute;n&eacute;ralement garder cette vue d'ensemble &mdash; avec "Toutes les
+        &eacute;quipes", rien ne change pour eux. Mais il y a aussi des
+        <strong>commerciaux et des chefs d'&eacute;quipe</strong> qui ne
         travaillent qu'un seul entonnoir et veulent mieux s'organiser : en
-        choisissant leur propre équipe dans le même sélecteur, le tableau se
-        limite à leurs étapes et leurs enregistrements.
+        choisissant leur propre &eacute;quipe dans le m&ecirc;me s&eacute;lecteur, le tableau se
+        limite &agrave; leurs &eacute;tapes et leurs enregistrements.
     </p>
 
     <p style="text-align: center; margin-top: 2rem; color: #6c757d;">
-        Part of the ABC UI line for Odoo 19 · built on <code>abc_web_utils</code> ·
+        Part of the ABC UI line for Odoo 19 &middot; built on <code>abc_web_utils</code> &middot;
         <a href="https://abcsas.com">abcsas.com</a>
     </p>
 </section>

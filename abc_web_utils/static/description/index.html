@@ -1,8 +1,9 @@
+<meta charset="utf-8">
 <section style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem; font-family: sans-serif; color: #212529;">
     <h1 style="text-align: center; color: #714B67;">ABC Web Utils</h1>
     <p style="text-align: center; font-size: 1.15rem;">
         The shared toolbox behind every free ABC control. <strong>No menu,
-        no screen, no feature of its own</strong> — just the plumbing the
+        no screen, no feature of its own</strong> &mdash; just the plumbing the
         rest of the ABC line reuses instead of reinventing.
     </p>
 
@@ -11,12 +12,12 @@
         Odoo tells you to. It's a <em>dependency</em>: installing any ABC
         free control that needs it (e.g. <strong>ABC Team Stage
         Filter</strong>) pulls it in automatically. On its own it changes
-        nothing — no new menu, no altered behavior, nothing to configure.
+        nothing &mdash; no new menu, no altered behavior, nothing to configure.
     </div>
 
     <h2>What it actually contains</h2>
     <p>
-        Every ABC control faces the same handful of problems — patch a
+        Every ABC control faces the same handful of problems &mdash; patch a
         core component safely, remember a user's preference without
         polluting other users or databases, parse a pasted Excel range,
         show a progress bar during a long operation. Instead of every
@@ -24,19 +25,19 @@
         after release), they all lean on this one shared implementation:
     </p>
     <ul>
-        <li><strong>Safe, reversible patching</strong> — additive
+        <li><strong>Safe, reversible patching</strong> &mdash; additive
             <code>patch()</code> helpers that always call the original
             method and can be fully undone, so uninstalling a control
             never leaves a trace.</li>
-        <li><strong>Per-user, per-database preferences</strong> — a small
+        <li><strong>Per-user, per-database preferences</strong> &mdash; a small
             <code>localStorage</code> wrapper namespaced by database,
             model and user, so one browser used by several people (or
             several databases) never mixes up saved settings.</li>
-        <li><strong>Excel/Calc paste parsing</strong> — turns a clipboard
+        <li><strong>Excel/Calc paste parsing</strong> &mdash; turns a clipboard
             paste into a clean grid of values, with sane size guardrails
             so a huge accidental paste can't freeze the browser.</li>
-        <li><strong>A progress overlay</strong> — one shared, consistent
-            "working…" indicator with percentage and elapsed/estimated
+        <li><strong>A progress overlay</strong> &mdash; one shared, consistent
+            "working&hellip;" indicator with percentage and elapsed/estimated
             time, instead of every control inventing its own spinner.</li>
     </ul>
 
@@ -45,7 +46,7 @@
         Concentrating this plumbing in one place means the fragile points
         of contact with Odoo's core get updated <strong>once</strong> each
         year Odoo releases, instead of once per control. It also means
-        every ABC free hook stays genuinely minimal — a control that adds
+        every ABC free hook stays genuinely minimal &mdash; a control that adds
         one feature ships as one small file, not a copy of these helpers
         bundled in again.
     </p>
@@ -53,7 +54,7 @@
     <h2>Safe by construction</h2>
     <ul>
         <li>Zero business models, zero data of its own.</li>
-        <li>Installing it changes no existing behavior — it only becomes
+        <li>Installing it changes no existing behavior &mdash; it only becomes
             active through the controls that depend on it.</li>
         <li>Uninstalling cleans up its own configuration parameters,
             nothing is left behind.</li>
@@ -62,45 +63,45 @@
 
     <hr style="margin: 2.5rem 0; border: none; border-top: 1px solid #dee2e6;">
 
-    <h2 style="color: #714B67;">Español</h2>
+    <h2 style="color: #714B67;">Espa&ntilde;ol</h2>
     <p>
-        Es la caja de herramientas compartida detrás de cada control
-        gratuito de ABC — sin menú, sin pantalla, sin ninguna función
+        Es la caja de herramientas compartida detr&aacute;s de cada control
+        gratuito de ABC &mdash; sin men&uacute;, sin pantalla, sin ninguna funci&oacute;n
         propia. Solo hace falta instalarlo si otro control lo pide como
         dependencia (p. ej. <strong>ABC Team Stage Filter</strong>); por
-        sí solo no cambia nada. Concentra aquí lo que todos los controles
-        necesitan — parches seguros y reversibles, preferencias por
+        s&iacute; solo no cambia nada. Concentra aqu&iacute; lo que todos los controles
+        necesitan &mdash; parches seguros y reversibles, preferencias por
         usuario y base sin mezclarse, lectura de pegado de Excel, una
-        barra de progreso compartida — para actualizarlo una sola vez por
-        cada versión anual de Odoo, en vez de una vez por control.
+        barra de progreso compartida &mdash; para actualizarlo una sola vez por
+        cada versi&oacute;n anual de Odoo, en vez de una vez por control.
     </p>
 
     <h2 style="color: #714B67;">Deutsch</h2>
     <p>
         Dies ist der gemeinsame Werkzeugkasten hinter jedem kostenlosen
-        ABC-Steuerelement — ohne eigenes Menü, ohne eigene Funktion. Es
+        ABC-Steuerelement &mdash; ohne eigenes Men&uuml;, ohne eigene Funktion. Es
         muss nur installiert werden, wenn ein anderes Steuerelement es als
-        Abhängigkeit benötigt (z. B. <strong>ABC Team Stage
-        Filter</strong>); für sich allein ändert es nichts. Es bündelt,
-        was alle Steuerelemente brauchen — sichere, reversible Patches,
+        Abh&auml;ngigkeit ben&ouml;tigt (z. B. <strong>ABC Team Stage
+        Filter</strong>); f&uuml;r sich allein &auml;ndert es nichts. Es b&uuml;ndelt,
+        was alle Steuerelemente brauchen &mdash; sichere, reversible Patches,
         Benutzer- und datenbankspezifische Einstellungen, das Einlesen von
-        Excel-Einfügungen, eine gemeinsame Fortschrittsanzeige.
+        Excel-Einf&uuml;gungen, eine gemeinsame Fortschrittsanzeige.
     </p>
 
-    <h2 style="color: #714B67;">Français</h2>
+    <h2 style="color: #714B67;">Fran&ccedil;ais</h2>
     <p>
-        C'est la boîte à outils partagée derrière chaque contrôle gratuit
-        d'ABC — sans menu, sans écran, sans fonction propre. Il ne doit
-        être installé que si un autre contrôle en a besoin comme
-        dépendance (par ex. <strong>ABC Team Stage Filter</strong>) ; seul,
-        il ne change rien. Il rassemble ce dont tous les contrôles ont
-        besoin — des correctifs sûrs et réversibles, des préférences par
+        C'est la bo&icirc;te &agrave; outils partag&eacute;e derri&egrave;re chaque contr&ocirc;le gratuit
+        d'ABC &mdash; sans menu, sans &eacute;cran, sans fonction propre. Il ne doit
+        &ecirc;tre install&eacute; que si un autre contr&ocirc;le en a besoin comme
+        d&eacute;pendance (par ex. <strong>ABC Team Stage Filter</strong>) ; seul,
+        il ne change rien. Il rassemble ce dont tous les contr&ocirc;les ont
+        besoin &mdash; des correctifs s&ucirc;rs et r&eacute;versibles, des pr&eacute;f&eacute;rences par
         utilisateur et par base, la lecture du collage Excel, une barre de
-        progression partagée.
+        progression partag&eacute;e.
     </p>
 
     <p style="text-align: center; margin-top: 2rem; color: #6c757d;">
-        Foundation of the ABC UI line for Odoo 19 ·
+        Foundation of the ABC UI line for Odoo 19 &middot;
         <a href="https://abcsas.com">abcsas.com</a>
     </p>
 </section>
