@@ -1,0 +1,25 @@
+// Copyright (C) 2026 ABC S&S (https://abcsas.com).
+// License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
+//
+// EN: width capped so the team name doesn't stretch the control panel.
+// ES: ancho acotado para que el nombre del equipo no estire el panel.
+// DE: Breite begrenzt, damit der Teamname das Bedienfeld nicht dehnt.
+// FR: largeur plafonnée pour que le nom de l'équipe n'étire pas le panneau.
+.abc_team_stage_filter_select {
+    width: auto;
+    max-width: 200px;
+}
+
+// EN: column hidden by team_stage_filter.js when its stage doesn't belong
+// to the selected team (group_expand can't be trusted to do this — see the
+// note at the top of team_stage_filter.js).
+// ES: columna ocultada por team_stage_filter.js cuando su etapa no
+// pertenece al equipo elegido (no se puede confiar en group_expand para
+// esto — ver la nota al inicio de team_stage_filter.js).
+// DE: Spalte, die von team_stage_filter.js ausgeblendet wird, wenn ihre
+// Phase nicht zum gewählten Team gehört.
+// FR: colonne masquée par team_stage_filter.js quand son étape n'appartient
+// pas à l'équipe choisie.
+.abc_team_stage_filter_hidden {
+    display: none !important;
+}

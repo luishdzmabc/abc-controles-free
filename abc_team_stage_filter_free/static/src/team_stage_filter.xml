@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2026 ABC S&S (https://abcsas.com).
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html). -->
+<templates xml:space="preserve">
+
+    <!--
+        EN: team selector, appended to the control panel's navigation zone,
+        so it sits next to the view-switcher icons. `abcTeamStageFilter` only
+        exists in env when a KanbanController for a configured model provides
+        the bridge, so this renders nowhere else — and only once 2+ teams are
+        known.
+
+        *** DO NOT anchor this xpath on the view-switcher <nav> itself. ***
+        The stock template is:
+
+            <t t-if="env.config.viewSwitcherEntries?.length > 1">
+                <div t-if="env.isSmall" class="o_cp_switch_buttons …"/>   (mobile)
+                <nav t-else=""          class="o_cp_switch_buttons …"/>   (desktop)
+            </t>
+
+        Owl requires `t-else` to be the IMMEDIATE sibling of its `t-if`.
+        Anchoring on the <nav> with position="before" injects a node between
+        the two, which silently kills the `t-else` branch — i.e. the whole
+        desktop view-switcher icon group (list / calendar / pivot / graph /
+        map / activity) DISAPPEARS, with no console error at all. Confirmed
+        live against a real database. Anchoring on the container instead
+        keeps us outside that if/else pair. (position="inside" on the <nav>
+        is also safe, since that stays within one branch.)
+
+        ES: selector de equipo, agregado a la zona de navegación del panel
+        de control, junto a los íconos de cambio de vista.
+
+        *** NO anclar este xpath en el <nav> del cambio de vista. ***
+        La plantilla nativa tiene un `t-if` (móvil) seguido de su `t-else`
+        (escritorio). Owl exige que `t-else` sea el hermano INMEDIATO de su
+        `t-if`; anclar en el <nav> con position="before" mete un nodo en
+        medio y mata en silencio la rama `t-else` — o sea, desaparece el
+        grupo completo de íconos de cambio de vista de escritorio, sin
+        ningún error en consola. Confirmado en vivo contra una base real.
+        Anclar en el contenedor nos deja fuera de esa pareja if/else.
+
+        DE: Team-Auswahl, an die Navigationszone des Bedienfelds angehängt.
+        *** Diesen xpath NICHT am <nav> des Ansichtswechsels verankern: ***
+        Owl verlangt, dass `t-else` das UNMITTELBARE Geschwisterelement
+        seines `t-if` ist; ein dazwischen eingefügter Knoten killt den
+        `t-else`-Zweig lautlos — die gesamte Symbolgruppe verschwindet,
+        ohne jede Fehlermeldung.
+
+        FR: sélecteur d'équipe, ajouté à la zone de navigation du panneau.
+        *** Ne PAS ancrer ce xpath sur le <nav> du changement de vue : ***
+        Owl exige que `t-else` soit le frère IMMÉDIAT de son `t-if` ;
+        insérer un nœud entre les deux tue silencieusement la branche
+        `t-else` — tout le groupe d'icônes disparaît, sans aucune erreur.
+    -->
+    <t t-inherit="web.ControlPanel" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_control_panel_navigation')]" position="inside">
+            <select t-if="abcTeamStageFilter and abcTeamStageFilter.teams.length > 1"
+                    class="form-select form-select-sm abc_team_stage_filter_select"
+                    t-on-change="(ev) => this.abcOnTeamChange(ev)"
+                    t-att-title="abcTeamFilterTooltip">
+                <option value="" t-att-selected="!abcTeamStageFilter.selectedTeamId" t-esc="abcAllTeamsLabel"/>
+                <t t-foreach="abcTeamStageFilter.teams" t-as="team" t-key="team.id">
+                    <option t-att-value="team.id"
+                            t-att-selected="team.id === abcTeamStageFilter.selectedTeamId"
+                            t-esc="team.name"/>
+                </t>
+            </select>
+        </xpath>
+    </t>
+
+</templates>

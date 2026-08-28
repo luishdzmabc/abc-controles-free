@@ -1,0 +1,34 @@
+# Configuracion de gitleaks — Controles Odoo
+#
+# ATENCION: la excepcion de abajo NO es un falso positivo. Es un SECRETO REAL
+# que el owner decidio dejar en el repo el 2026-08-01, con conocimiento del
+# riesgo. Se registra para que el CI siga sirviendo para hallazgos NUEVOS en
+# vez de quedar en rojo permanente — un CI siempre rojo se deja de mirar y
+# entonces no protege de nada.
+#
+# Mientras esta excepcion exista, este repo tiene una credencial de base de
+# datos publicada en su historial. Al retirarla hay que: rotar la credencial en
+# las instancias que la usen, moverla a variable de entorno en los 4 scripts, y
+# asumir comprometida la anterior (el historial la conserva aunque se borre del
+# codigo actual).
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+description = "Generic API Key"
+regex = '''(?i)(?:key|api|token|secret|client|passwd|password|auth|access)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:{1,3}=|\|\||:|<=|=>|:=|\?=|,)(?:'|\"|\s|=|\x60){0,5}([0-9a-z\-_.=]{10,150})(?:['|\"|\n|\r|\s|\x60|;|\\]|$)'''
+keywords = ["key", "api", "token", "secret", "client", "passwd", "password", "auth", "access"]
+
+  # RIESGO ACEPTADO (2026-08-01) — password de la base de datos de Odoo
+  # hardcodeada en los scripts del ciclo de construccion y citada en
+  # CONSTRUCCION.md. Detectada por el primer escaneo del CI en este repo.
+  # Decision del owner: dejarla como esta. Revisar al retomar el tema de
+  # secretos (BACKLOG C3: rotar secretos + purgar historial).
+  [rules.allowlist]
+  description = "RIESGO ACEPTADO, no falso positivo: credencial de BD de Odoo en scripts del ciclo"
+  paths = [
+    '''scripts/ciclo/.*\.js$''',
+    '''(^|/)CONSTRUCCION\.md$''',
+  ]

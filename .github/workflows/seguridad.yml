@@ -1,0 +1,20 @@
+# Copiar en el repo de trabajo como .github/workflows/seguridad.yml
+#
+# Invoca el workflow reutilizable del equipo. La logica vive en abc-memoria:
+# si se arregla ahi, se arregla para todos los repos a la vez. No copies el
+# contenido del workflow — copia solo este llamador.
+
+name: Seguridad
+
+on:
+  push:
+    branches: [main, "19.0"]
+  pull_request:
+
+jobs:
+  seguridad:
+    uses: git-abcsas/abc-memoria/.github/workflows/seguridad.yml@main
+    # Opcionales:
+    # with:
+    #   gitleaks-version: "8.30.1"
+    #   dependencias: true

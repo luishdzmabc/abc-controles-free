@@ -1,0 +1,29 @@
+/* Copyright (C) 2026 ABC S&S (https://abcsas.com).
+ * License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
+ *
+ * Overlay bloqueante del servicio abc_progress_overlay: cubre toda la
+ * ventana por encima de modales, difumina el fondo y comunica "trabajo
+ * en curso" con el cursor. Sin colores hardcodeados: variables Bootstrap
+ * del bundle.
+ */
+
+// Capa propia de la línea ABC: por encima de modales y sus backdrops
+// ($zindex-modal de Bootstrap), con margen para tooltips/popovers.
+$abc-progress-overlay-zindex: $zindex-modal + 100 !default;
+
+.o_abc_progress_overlay {
+    position: fixed;
+    inset: 0;
+    z-index: $abc-progress-overlay-zindex;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(3px);
+    cursor: progress;
+
+    .o_abc_progress_card {
+        min-width: 20rem;
+        // unquote() evita que Sass evalúe el min() en compilación (no puede
+        // comparar vw con rem → "Incompatible units"); se emite literal y lo
+        // resuelve el navegador.
+        max-width: unquote("min(90vw, 32rem)");
+    }
+}

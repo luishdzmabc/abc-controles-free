@@ -1,0 +1,46 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* abc_team_stage_filter_free
+#
+# Copyright (C) 2026 ABC S&S (https://abcsas.com).
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-27 00:00+0000\n"
+"PO-Revision-Date: 2026-08-27 00:00+0000\n"
+"Last-Translator: ABC <soporte@abcsas.com>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: abc_team_stage_filter_free
+#: model:ir.module.module,shortdesc:abc_team_stage_filter_free.module_abc_team_stage_filter_free
+msgid "ABC Team Stage Filter (Free)"
+msgstr "ABC Filtro de Equipo y Etapa (Gratis)"
+
+#. module: abc_team_stage_filter_free
+#: model:ir.module.module,summary:abc_team_stage_filter_free.module_abc_team_stage_filter_free
+msgid "Kanban team selector that scopes the board to that team's own stages"
+msgstr ""
+"Selector de equipo para el Kanban que limita el tablero a las etapas "
+"propias de ese equipo"
+
+#. module: abc_team_stage_filter_free
+#. odoo-javascript
+#: code:addons/abc_team_stage_filter_free/static/src/team_stage_filter.js:0
+msgid "All teams"
+msgstr "Todos los equipos"
+
+#. module: abc_team_stage_filter_free
+#. odoo-javascript
+#: code:addons/abc_team_stage_filter_free/static/src/team_stage_filter.js:0
+msgid "Scope the pipeline to the chosen team (limits stages to that team's own)"
+msgstr ""
+"Limita el pipeline al equipo elegido (restringe las etapas a las propias "
+"de ese equipo)"

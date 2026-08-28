@@ -1,0 +1,64 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* abc_web_utils
+#
+# Copyright (C) 2026 ABC S&S (https://abcsas.com).
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-13 00:00+0000\n"
+"PO-Revision-Date: 2026-07-13 00:00+0000\n"
+"Last-Translator: ABC\n"
+"Language-Team: ABC\n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: abc_web_utils
+#. odoo-javascript
+#: code:addons/abc_web_utils/static/src/services/progress_overlay.xml:0
+msgid "Elapsed:"
+msgstr "Transcurrido:"
+
+#. module: abc_web_utils
+#. odoo-javascript
+#: code:addons/abc_web_utils/static/src/services/progress_overlay.xml:0
+msgid "Time left:"
+msgstr "Tiempo restante:"
+
+#. module: abc_web_utils
+#: model:ir.model.fields,field_description:abc_web_utils.field_res_config_settings__abc_limit_clipboard_max_rows
+msgid "ABC: Max Rows Pasted from Clipboard"
+msgstr "ABC: filas máximas al pegar desde portapapeles"
+
+#. module: abc_web_utils
+#: model:ir.model.fields,help:abc_web_utils.field_res_config_settings__abc_limit_clipboard_max_rows
+msgid "Guardrail C5. Empty or invalid = safe default (500). Hard cap: 5000."
+msgstr "Guardrail C5. Vacío o inválido = default seguro (500). Tope duro: 5000."
+
+#. module: abc_web_utils
+#: model:ir.model.fields,field_description:abc_web_utils.field_res_config_settings__abc_limit_clipboard_max_cols
+msgid "ABC: Max Columns Pasted from Clipboard"
+msgstr "ABC: columnas máximas al pegar desde portapapeles"
+
+#. module: abc_web_utils
+#: model:ir.model.fields,help:abc_web_utils.field_res_config_settings__abc_limit_clipboard_max_cols
+msgid "Guardrail C5. Empty or invalid = safe default (50). Hard cap: 200."
+msgstr "Guardrail C5. Vacío o inválido = default seguro (50). Tope duro: 200."
+
+#. module: abc_web_utils
+#: model:ir.model.fields,field_description:abc_web_utils.field_res_config_settings__abc_limit_clipboard_max_cell_chars
+msgid "ABC: Max Characters per Pasted Cell"
+msgstr "ABC: caracteres máximos por celda pegada"
+
+#. module: abc_web_utils
+#: model:ir.model.fields,help:abc_web_utils.field_res_config_settings__abc_limit_clipboard_max_cell_chars
+msgid ""
+"Guardrail C5. Empty or invalid = safe default (5000). Hard cap: 100000."
+msgstr ""
+"Guardrail C5. Vacío o inválido = default seguro (5000). Tope duro: 100000."
