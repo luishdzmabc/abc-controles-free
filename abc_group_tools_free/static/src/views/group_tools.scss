@@ -1,0 +1,28 @@
+// Copyright (C) 2026 ABC S&S (https://abcsas.com).
+// License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
+
+// Estilos mínimos del gancho gratuito. Cero overrides de reglas del core: solo posicionan la barra propia y afinan la píldora de conteo.
+
+// La barra en la lista fluye como bloque normal encima de la tabla.
+.o_list_renderer .abc_group_tools_bar {
+    width: fit-content;
+}
+
+// En kanban el renderer es un flex horizontal de columnas: la barra se
+// saca del flujo para no contar como una columna más.
+.o_kanban_renderer.o_kanban_grouped {
+    position: relative;
+}
+
+.o_kanban_renderer .abc_group_tools_bar {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.5rem;
+    z-index: 2;
+}
+
+// Píldora de conteo por grupo (marca ABC).
+.abc_group_count {
+    font-weight: 600;
+    vertical-align: middle;
+}
