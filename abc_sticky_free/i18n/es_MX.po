@@ -1,0 +1,28 @@
+# Copyright (C) 2026 ABC S&S (https://abcsas.com).
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).																 
+# Traduccion es_MX de abc_sticky_free.
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: ABC <soporte@abcsas.com>\n"
+"Language-Team: Spanish (Mexico)\n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: abc_sticky_free
+#: model:ir.module.module,shortdesc:abc_sticky_free.module_abc_sticky_free
+msgid "ABC Sticky (Free)"
+msgstr "ABC Fijar Encabezados (Gratis)"
+
+#. module: abc_sticky_free
+#: model:ir.module.module,summary:abc_sticky_free.module_abc_sticky_free
+msgid ""
+"Encabezados y pies de lista fijos + statusbar de formulario fijo al hacer "
+"scroll"
+msgstr ""
+"Encabezados y pies de lista fijos + statusbar de formulario fijo al hacer "
+"scroll"

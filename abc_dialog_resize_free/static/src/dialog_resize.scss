@@ -1,0 +1,62 @@
+/* 
+Copyright (C) 2026 ABC (https://abcsas.com).
+License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).																		  
+
+Estilos del gancho de diálogos redimensionables. Todo cuelga de `.modal-content` (el cuadro del diálogo) y solo actúa cuando el JS inyecta la agarradera o marca el nodo como redimensionado.
+*/
+
+// El `.modal-content` de Bootstrap ya es position:relative, pero lo reforzamos para anclar la agarradera con seguridad.
+.modal-content {
+    position: relative;
+
+    // Agarradera de la esquina inferior derecha.
+    > .o_abc_resize_handle {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 16px;
+        height: 16px;
+        cursor: nwse-resize;
+        z-index: 5;
+        touch-action: none;
+        // Rayitas diagonales tipo "grip" dibujadas con un degradado.
+        background-image: repeating-linear-gradient(
+            -45deg,
+            transparent 0,
+            transparent 2px,
+            rgba(0, 0, 0, 0.35) 2px,
+            rgba(0, 0, 0, 0.35) 3px
+        );
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}
+
+// Cuando el usuario redimensiona, liberamos el ancho fijo que impone el tamaño base (`modal-sm/md/lg/xl`) del `.modal-dialog` para que mande el ancho explícito del `.modal-content`.
+.modal-dialog:has(> .modal-content.o_abc_resized) {
+    max-width: none;
+    width: fit-content;
+}
+
+.modal-content.o_abc_resized {
+    max-width: none;
+
+    // Con alto explícito, el cuerpo debe poder desplazarse.
+    .modal-body {
+        overflow-y: auto;
+    }
+}
+
+// En diálogos a pantalla completa (o pantallas pequeñas) no tiene sentido redimensionar: ocultamos la agarradera.
+.o_modal_full .modal-content > .o_abc_resize_handle {
+    display: none;
+}
+
+@include media-breakpoint-down(md) {
+    .modal-content > .o_abc_resize_handle {
+        display: none;
+    }
+}

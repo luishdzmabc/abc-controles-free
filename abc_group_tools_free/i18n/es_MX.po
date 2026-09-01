@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* abc_group_tools_free
+# Copyright (C) 2026 ABC S&S (https://abcsas.com).
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-18 00:00+0000\n"
+"PO-Revision-Date: 2026-07-18 00:00+0000\n"
+"Last-Translator: ABC\n"
+"Language-Team: ABC\n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: abc_group_tools_free
+#. odoo-javascript
+#: code:addons/abc_group_tools_free/static/src/views/list/list_renderer.xml:0
+#: code:addons/abc_group_tools_free/static/src/views/kanban/kanban_renderer.xml:0
+msgid "Expand all"
+msgstr "Expandir todo"
+
+#. module: abc_group_tools_free
+#. odoo-javascript
+#: code:addons/abc_group_tools_free/static/src/views/list/list_renderer.xml:0
+#: code:addons/abc_group_tools_free/static/src/views/kanban/kanban_renderer.xml:0
+msgid "Collapse all"
+msgstr "Colapsar todo"
+
+#. module: abc_group_tools_free
+#. odoo-javascript
+#: code:addons/abc_group_tools_free/static/src/views/list/list_renderer.xml:0
+#: code:addons/abc_group_tools_free/static/src/views/kanban/kanban_renderer.xml:0
+msgid "Group tools"
+msgstr "Herramientas de grupo"

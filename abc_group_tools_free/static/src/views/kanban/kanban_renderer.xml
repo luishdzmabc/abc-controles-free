@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2026 ABC S&S (https://abcsas.com).
+License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
+
+    Herencia QWeb ADITIVA (modo extension) sobre dos plantillas del core v19 (verificadas en la imagen odoo:19.0):
+
+   * web.KanbanRenderer -> se añade la barra "expandir/colapsar todo" dentro del div.o_kanban_renderer (posicionada en absoluto por SCSS para no romper el flex de columnas). Solo en kanban agrupado.
+   * web.KanbanHeader   -> se añade una píldora con el conteo de registros de la columna, tras el <span class="text-truncate"> del título desplegado. 
+-->
+<templates xml:space="preserve">
+
+    <t t-inherit="web.KanbanRenderer" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_kanban_renderer')]" position="inside">
+            <div t-if="props.list.isGrouped"
+                 class="abc_group_tools_bar btn-group btn-group-sm d-print-none"
+                 role="group"
+                 aria-label="Group tools">
+                <button type="button"
+                        class="btn btn-secondary o_abc_expand_all"
+                        t-on-click.stop="() => this.abcExpandAllGroups()">
+                    <i class="fa fa-plus-square-o me-1" role="img" aria-hidden="true"/>Expand all
+                </button>
+                <button type="button"
+                        class="btn btn-secondary o_abc_collapse_all"
+                        t-on-click.stop="() => this.abcCollapseAllGroups()">
+                    <i class="fa fa-minus-square-o me-1" role="img" aria-hidden="true"/>Collapse all
+                </button>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-inherit="web.KanbanHeader" t-inherit-mode="extension">
+        <xpath expr="//span[hasclass('text-truncate')]" position="after">
+            <span class="badge rounded-pill text-bg-secondary abc_group_count ms-1"
+                  t-esc="group.count"/>
+        </xpath>
+    </t>
+
+</templates>

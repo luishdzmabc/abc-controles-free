@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2026 ABC S&S (https://abcsas.com).
+License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
+
+    Herencia QWeb ADITIVA (modo extension) sobre dos plantillas del core v19 (verificadas en la imagen odoo:19.0):
+
+       * web.ListRenderer -> se añade la barra de botones "expandir/colapsar todo" JUSTO antes del <table t-ref="table">. Solo aparece en listas agrupadas (props.list.isGrouped).
+       * web.ListRenderer.GroupRow -> se añade una píldora con el conteo de registros del grupo, tras el <span class="o_group_caret">. Ese caret usa t-attf-class (no un atributo class estático), así que el ancla es el primer <span> del div.d-flex.align-items-center.
+
+    Cero configuración: se activa al instalar. 
+-->
+
+<templates xml:space="preserve">
+
+    <t t-inherit="web.ListRenderer" t-inherit-mode="extension">
+        <xpath expr="//table[@t-ref='table']" position="before">
+            <div t-if="props.list.isGrouped"
+                 class="abc_group_tools_bar btn-group btn-group-sm mb-1 d-print-none"
+                 role="group"
+                 aria-label="Group tools">
+                <button type="button"
+                        class="btn btn-secondary o_abc_expand_all"
+                        t-on-click.stop="() => this.abcExpandAllGroups()">
+                    <i class="fa fa-plus-square-o me-1" role="img" aria-hidden="true"/>Expand all
+                </button>
+                <button type="button"
+                        class="btn btn-secondary o_abc_collapse_all"
+                        t-on-click.stop="() => this.abcCollapseAllGroups()">
+                    <i class="fa fa-minus-square-o me-1" role="img" aria-hidden="true"/>Collapse all
+                </button>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-inherit="web.ListRenderer.GroupRow" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('align-items-center')]/span[1]" position="after">
+            <span class="badge rounded-pill text-bg-secondary abc_group_count mx-1"
+                  t-esc="group.count"/>
+        </xpath>
+    </t>
+
+</templates>
