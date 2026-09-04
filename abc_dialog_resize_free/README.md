@@ -6,18 +6,18 @@ Hace **redimensionables** los diálogos modales del cliente web de Odoo 19.
 
 - Añade una agarradera en la esquina inferior derecha de cada diálogo. Arrástrala para cambiar el ancho y el alto del cuadro.
 - **Recuerda el tamaño por usuario** (guardado en el navegador, namespaced por base de datos y usuario) y lo reaplica al abrir el siguiente diálogo del mismo tamaño base.
-- El diálogo del core ya se puede **mover** arrastrando su cabecera; este gancho añade lo que faltaba: **redimensionar**.
+- El diálogo de odoo base ya se puede **mover** arrastrando su cabecera; este modulo añade lo que faltaba: **redimensionar**.
 
 ## Cómo funciona
 
-Frontend puro: un parche aditivo y reversible sobre el componente `Dialog` del core (`@web/core/dialog/dialog`). No hay modelos, no hay configuración, no toca el servidor. Reutiliza `applyPatchOnce` y `makeLocalStore` de `abc_web_utils`.
+Un cambio solamente de apariencia: un parche anadido y reversible sobre las ventanas emergentes del core. No toca el sistema ni la base de datos y se puede quitar sin dejar rastro.
 
-- El tamaño viaja por el getter `contentStyle` (estado reactivo OWL), así que los re-render del core —al mover la cabecera o apilar diálogos— no lo borran.
-- La agarradera se inyecta en el DOM al montar, sin reescribir el template QWeb del core.
+El tamaño que elige el usuario queda guardado en la memoria de la
+ventana, así que no se borra aunque la pantalla se vuelva a dibujar. Y la manija para cambiar el tamaño se agrega por fuera, sin modificar el diseño original de la ventana.
 
 ## Instalación
 
-Depende de `web` y `abc_web_utils`. Instálalo y listo; para quitarlo, desinstálalo (solo son assets de frontend).
+Depende de los paquetes `web` y `abc_web_utils`. Instálalo y listo; para quitarlo, desinstálalo.
 
 ---
 

@@ -2,7 +2,8 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
 
 
-# Smoke test sin navegador: el módulo es gancho puro de frontend, así que la única invariante de servidor es que instala limpio y no arrastra modelos de negocio ni datos.
+# Smoke test sin navegador: el módulo es puro frontend, así que lo unico que garantiza de lado del servidor es que instala sin errores 
+# y no crea nada nuevo (ni modelos de negocio ni datos).
 
 
 from odoo.tests import tagged

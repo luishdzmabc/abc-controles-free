@@ -2,7 +2,8 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
 
 
-# Puente Python -> HOOT: lanza la suite JS del módulo en el runner /web/tests y espera la señal de éxito. Se omite solo si el entorno de CI no trae navegador/websocket-client.
+# Puente Python -> HOOT: lanza la suite JS del módulo en el runner /web/tests y espera la señal de que todo salio bien. 
+# Se lo salta si el entorno de CI no trae navegador/websocket-client.
 
 
 from odoo.tests import tagged

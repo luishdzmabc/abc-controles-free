@@ -5,18 +5,13 @@
     "summary": "Unified board of all your pending activities (mail.activity) "
     "across every model in a single view",
     "description": """
-Free convenience hook (part of the ABC controls line):
+        Free convenience module (part of the ABC controls line):
 
-Odoo core gives you activities per record and an "Activities" view per model,
-but not an easy single board that unifies the pending activities of ALL models
-at once. This gancho adds one menu, "Mis actividades (ABC)", that opens a
-unified list / kanban / calendar over ``mail.activity`` filtered to the current
-user, groupable by document model, activity type or deadline, with a one-click
-"Mark done".
+        Odoo core gives you activities per record and an "Activities" view per model, but not an easy single board that unifies the pending activities of ALL 
+        models at once. This hook adds one menu, "Mis actividades (ABC)", that opens a unified list / kanban / calendar filtered to the current user, 
+        groupable by document model, activity type or deadline, with a one-click "Mark done".
 
-Purely additive: no new models, no settings. It only adds one action, one menu
-and a handful of views over the existing ``mail.activity`` model. Uninstalling
-leaves no trace.
+        Purely additive: no new models, no settings. It only adds one action, one menu and a handful of views. Uninstalling leaves no trace.
     """,
     "version": "19.0.1.0.0",
     "category": "ABC/Free",

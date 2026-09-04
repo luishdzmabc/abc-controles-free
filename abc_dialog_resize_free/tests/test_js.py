@@ -1,7 +1,7 @@
 # Copyright (C) 2026 ABC (https://abcsas.com).
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
 
-#Puente Python -> HOOT: lanza la suite JS del gancho de dialogos redimensionables en el runner /web/tests y espera la senal de exito.
+#Puente Python -> HOOT: lanza la suite JS del Hook de dialogos redimensionables en el runner /web/tests y espera la senal de que todo sale correcto.
 
 from odoo.tests import tagged
 from odoo.tests.common import HttpCase

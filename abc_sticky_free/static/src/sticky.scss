@@ -2,21 +2,23 @@
 Copyright (C) 2026 ABC S&S (https://abcsas.com).
 License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).																		  
 
-Reglas sticky del gancho gratuito ABC. Solo se cargan cuando el modulo esta instalado (bundle web.assets_backend), y las reglas de lista se acotan a `.o_abc_sticky` (marca puesta por sticky_list.js).
-Todo se activa en pantalla >= md, igual que el core, para no romper el layout tactil de moviles. Se reutilizan las variables CSS del propio ListRenderer para que los fondos queden opacos (que las filas no se transparenten por detras del encabezado/pie fijos).
+Reglas sticky del modulo gratuito ABC:
+ -Solo se cargan cuando el modulo esta instalado (bundle web.assets_backend), y las reglas de lista se acotan a `.o_abc_sticky`.
+ -Todo se activa en pantalla >= md, igual que el core, para no romper el layout tactil de moviles. 
+ -El pie de totales lleva un fondo opaco con la variable del tema (que las filas no se transparenten por detras). El encabezado no necesita fondo propio aqui: ya lo trae el core.
 */
 
 // ------- Vistas de lista: encabezado + pie fijos -------
 .o_list_renderer.o_abc_sticky {
     @media (min-width: 768px) {
-        // Encabezado fijo arriba. En v19 el core ya fija el thead; esta regla lo garantiza tambien en listas embebidas (x2many) y ante temas que lo hayan desactivado.
+        // Encabezado fijo arriba. Esta regla lo garantiza tambien en listas embebidas (x2many) y ante temas que lo hayan desactivado.
         > .o_list_table > thead {
             position: sticky;
             top: 0;
             z-index: 2;
         }
 
-        // Pie de totales fijo abajo (agregados). Esto NO lo hace el core de v19: es el valor neto del gancho.
+        // Pie de totales fijo abajo (agregados). Es el valor neto del hook.
         > .o_list_table > tfoot {
             position: sticky;
             bottom: 0;
@@ -24,9 +26,8 @@ Todo se activa en pantalla >= md, igual que el core, para no romper el layout ta
 
             > tr > td,
             > tr > th {
-                // Fondo opaco reutilizando la variable del ListRenderer, con degradados de respaldo por si el tema no la define.
-                background-color: /*var(
-                    --ListRenderer-tfoot-bg-color,*/
+                // Fondo opaco con la variable del tema, con un color fijo de respaldo por si el tema no la define.
+                background-color:
                     var(--o-webclient-background-color, #101116);
             }
         }
@@ -34,12 +35,12 @@ Todo se activa en pantalla >= md, igual que el core, para no romper el layout ta
 }
 
 // ------- Vistas de formulario: statusbar fijo -------
-// El statusbar no vive dentro del ListRenderer; se marca por selector del core (`.o_form_statusbar`). La sola presencia de este bundle (modulo instalado) reafirma que quede fijo al hacer scroll.
+// El statusbar no vive dentro del ListRenderer; se marca por selector del core (`.o_form_statusbar`). La sola presencia de este bundle (modulo instalado) asegura que quede fijo al hacer scroll.
 .o_form_view .o_form_statusbar {
     @media (min-width: 768px) {
         position: sticky;
         top: 0;
-        // Igualar la capa sticky del core v19 (mismo selector/especificidad): este bundle carga despues del core, asi que NO debemos bajar el z-index del statusbar (evita que overlays queden por encima).
+        // Igualar la capa sticky del core v19: este bundle carga despues del core, asi que NO se debe bajar el z-index del statusbar para evita que overlays queden por encima.
         z-index: $zindex-sticky;
         background-color: var(--o-view-background-color, var(--body-bg, #ffffff));
     }

@@ -2,13 +2,15 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
 {
     "name": "ABC Dialog Resize (Free)",
-    "summary": "Diálogos modales redimensionables (arrastrar la esquina) que recuerdan su tamaño por usuario",
+    "summary": "Diálogos modales redimensionables que recuerdan su tamaño por usuario",
     "description": """
-        Gancho gratuito de la línea de controles ABC.
+        Modulo gratuito de la línea de controles ABC.
 
-        Hace **redimensionables** los diálogos modales del cliente web: aparece una agarradera en la esquina inferior derecha del cuadro; al arrastrarla el diálogo cambia de ancho y alto. El tamaño elegido se **recuerda por usuario** (localStorage namespaced) y se reaplica la próxima vez que se abre un diálogo del mismo tamaño base.
+        Hace **redimensionables** las ventanas de los diálogos modales del cliente web: aparece una agarradera en la esquina inferior derecha del cuadro; al arrastrarla el diálogo cambia de ancho y alto. 
+        El tamaño elegido se **recuerda por usuario** y se reaplica la próxima vez que se abre un diálogo del mismo tamaño base.
 
-        Módulo mínimo: cero configuración, cero modelos de negocio. Frontend puro (parche aditivo y reversible sobre el componente ``Dialog`` del core). No cambia ningún dato ni comportamiento del servidor. Se activa al instalar y se desactiva al desinstalar.
+        Módulo mínimo: cero configuración, cero modelos de negocio. Puro cambio visual, no cambia ningún dato ni comportamiento del ambiente. 
+        Se activa al instalar y se desactiva al desinstalar.
     """,
     "version": "19.0.1.0.0",
     "category": "ABC/Free",

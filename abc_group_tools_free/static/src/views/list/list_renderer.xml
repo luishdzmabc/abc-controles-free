@@ -6,7 +6,8 @@ License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
     Herencia QWeb ADITIVA (modo extension) sobre dos plantillas del core v19 (verificadas en la imagen odoo:19.0):
 
        * web.ListRenderer -> se añade la barra de botones "expandir/colapsar todo" JUSTO antes del <table t-ref="table">. Solo aparece en listas agrupadas (props.list.isGrouped).
-       * web.ListRenderer.GroupRow -> se añade una píldora con el conteo de registros del grupo, tras el <span class="o_group_caret">. Ese caret usa t-attf-class (no un atributo class estático), así que el ancla es el primer <span> del div.d-flex.align-items-center.
+       * web.ListRenderer.GroupRow -> se añade una píldora con el conteo de registros del grupo, tras el <span class="o_group_caret">. 
+	     Ese caret usa t-attf-class (no un atributo class estático), así que el ancla es el primer <span> del div.d-flex.align-items-center.
 
     Cero configuración: se activa al instalar. 
 -->

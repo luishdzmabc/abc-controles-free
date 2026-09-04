@@ -2,7 +2,7 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
 
 
-#Puente Python -> HOOT: lanza la suite JS del gancho sticky en el runner /web/tests y espera la senal de exito.
+#Puente Python -> HOOT: lanza la suite JS de sticky en el runner /web/tests y espera la senal de que todo salio correcto.
 
 
 from odoo.tests import tagged

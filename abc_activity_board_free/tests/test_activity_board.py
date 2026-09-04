@@ -1,11 +1,9 @@
 # Copyright (C) 2026 ABC (https://abcsas.com).
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
-"""Pruebas de servidor del gancho gratuito abc_activity_board_free.
+"""Pruebas de servidor del modulo gratuito abc_activity_board_free.
 
-El gancho no declara modelos propios: sólo aporta una acción, un menú y
-vistas sobre ``mail.activity``. Verificamos que la acción/vistas existen,
-que el dominio filtra por el usuario actual y que la superficie de datos
-es cero (no arrastra modelos de negocio)."""
+El modulo no declara modelos propios: sólo aporta una acción, un menú y vistas. Verificamos que la acción/vistas existen, que el dominio filtra por el usuario actual 
+y que la superficie de datos es cero (no arrastra modelos de negocio)."""
 
 from odoo.tests import tagged
 from odoo.tests.common import TransactionCase, new_test_user
@@ -93,16 +91,15 @@ class TestActivityBoard(TransactionCase):
         act = self._make_activity(self.user_a)
         self.assertTrue(act.active)
         act.action_done()
-        # Tras marcarse hecha, la actividad se archiva/elimina: ya no está
-        # activa, por lo que sale del tablero de pendientes.
+        # Tras marcarse hecha, la actividad se archiva/elimina: ya no está activa, por lo que sale del tablero de pendientes.
         self.assertFalse(act.exists() and act.active)
 
     def test_no_business_models(self):
-        # El gancho no declara modelos propios: cero superficie de datos.
+        # El modulo no declara modelos propios: cero superficie de datos.
         leaked = self.env["ir.model"].search(
             [("model", "=like", "abc.activity.board%")]
         )
         self.assertFalse(
             leaked,
-            "El gancho gratuito no debe declarar modelos de negocio.",
+            "El modulo gratuito no debe declarar modelos de negocio.",
         )

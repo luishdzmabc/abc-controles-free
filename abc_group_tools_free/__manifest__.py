@@ -10,7 +10,8 @@
         * Adds "Expand all" / "Collapse all" buttons on any grouped list or kanban view, so you fold/unfold every group with a single click instead of one by one.
         * Adds an ABC record-count pill badge on each group header (list group rows and kanban columns).
 
-        Purely additive frontend (reversible patches over the core renderers via abc_web_utils): installing it changes no default behavior beyond the two buttons and the badge, and it has zero settings. Uninstalling leaves no trace.
+        Purely frontend (reversible patches over the core renderers via abc_web_utils): installing it changes no default behavior beyond the two buttons and the badge, 
+        and it has zero settings. Uninstalling leaves no trace.
     """,
     "version": "19.0.1.0.0",
     "category": "ABC/Free",

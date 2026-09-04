@@ -2,8 +2,9 @@
 Copyright (C) 2026 ABC S&S (https://abcsas.com).
 License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).																	  
 
-Tests HOOT del gancho sticky (capa navegador via test_js.py).
-Verifican que el parche aditivo sobre ListRenderer aplica: el nodo raiz de la lista recibe la clase-gancho `o_abc_sticky` y el pie de totales (tfoot) sigue presente en el DOM para poder fijarse.
+Tests HOOT de sticky (capa navegador via test_js.py).
+Verifican que el parche sobre ListRenderer se aplique: el nodo raiz de la lista recibe la clase `o_abc_sticky` y el pie de totales (tfoot) 
+sigue presente en el DOM para poder fijarse.
 */
 
 import { describe, expect, test } from "@odoo/hoot";

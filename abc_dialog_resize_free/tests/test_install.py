@@ -1,7 +1,7 @@
 # Copyright (C) 2026 ABC (https://abcsas.com).
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
 
-#Smoke test sin navegador: El módulo es gancho puro de frontend, así que la única invariante de servidor es que instala limpio y no arrastra modelos de negocio ni datos.
+#Smoke test sin navegador: El módulo es puro frontend, así que se instala limpio y no arrastra modelos de negocio ni datos.
 
 
 from odoo.tests import tagged
@@ -18,11 +18,11 @@ class TestInstall(TransactionCase):
         self.assertEqual(module.state, "installed")
 
     def test_no_business_models(self):
-        # El gancho no declara modelos propios: cero superficie de datos.
+        # El hook no declara modelos propios.
         leaked = self.env["ir.model"].search(
             [("model", "=like", "abc.dialog.resize%")]
         )
         self.assertFalse(
             leaked,
-            "El gancho gratuito no debe declarar modelos de negocio.",
+            "El hook gratuito no debe declarar modelos de negocio.",
         )
