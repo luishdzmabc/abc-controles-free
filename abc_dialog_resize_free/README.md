@@ -20,4 +20,4 @@ Depende de los paquetes `web` y `abc_web_utils`. Instálalo y listo; para quitar
 
 ---
 
-Parte de la línea de controles ABC (suite `abc_*`). Licencia LGPL-3.
+Parte de la línea de controles ABC. Licencia LGPL-3.

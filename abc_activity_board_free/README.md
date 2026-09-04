@@ -1,7 +1,7 @@
 # ABC Activity Board (Free) 
 
 Modulo gratuito de la **línea de controles ABC** para Odoo 19 Community.
-Parte de la línea de controles ABC (suite `abc_web_utils`, `abc_group_tools_free`, `abc_sticky_free`, `abc_row_colors_free`, ...).
+Parte de la línea de controles ABC (`abc_web_utils`, `abc_group_tools_free`, `abc_sticky_free`, `abc_row_colors_free`, ...).
 
 - **Licencia:** LGPL-3 · **Autor:** ABC · **Versión:** 19.0.1.0.0
 - **Depende de:** `mail`, `abc_web_utils`
@@ -9,7 +9,7 @@ Parte de la línea de controles ABC (suite `abc_web_utils`, `abc_group_tools_fre
 
 ## ¿Qué aporta?
 
-El core de Odoo 19 muestra actividades **por registro** (chatter) y ofrece la vista "Activities" **por modelo**, pero no un tablero único que junte las actividades pendientes de **todos** los modelos a la vez de forma sencilla. El único acceso multi-modelo del core es el menú *Activities* del sistema de correo, poco visible y sin agrupación práctica.
+Odoo 19 muestra actividades por registro (chatter) y por modelo (vista "Activities"), pero no hay un tablero único que junte las pendientes de todos los modelos. El único acceso multi-modelo es el menú Activities del correo, poco visible y sin agrupación útil.
 
 Este modulo añade **un menú de nivel mas alto llamado "Mis actividades (ABC)"**, que abre un **tablero unificado** sobre `mail.activity`:
 
