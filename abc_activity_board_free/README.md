@@ -1,6 +1,6 @@
 # ABC Activity Board (Free) 
 
-Gancho gratuito de la **línea de controles ABC** para Odoo 19 Community.
+Modulo gratuito de la **línea de controles ABC** para Odoo 19 Community.
 Parte de la línea de controles ABC (suite `abc_web_utils`, `abc_group_tools_free`, `abc_sticky_free`, `abc_row_colors_free`, ...).
 
 - **Licencia:** LGPL-3 · **Autor:** ABC · **Versión:** 19.0.1.0.0
