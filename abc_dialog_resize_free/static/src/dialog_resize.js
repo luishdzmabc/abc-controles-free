@@ -2,17 +2,20 @@
 Copyright (C) 2026 ABC (https://abcsas.com).
 License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
 
-Gancho de diálogos modales REDIMENSIONABLES.
+Hooks de diálogos modales REDIMENSIONABLES.
 
 Delta sobre el core (@web/core/dialog/dialog):
-    - El Dialog del core ya es MOVIBLE (arrastrar la cabecera), pero NO redimensionable: `.modal-content` toma su ancho del tamaño fijo (`modal-sm/md/lg/xl`) del `.modal-dialog` y no se puede estirar.
-    - Este parche añade una agarradera en la esquina inferior derecha del `.modal-content`; al arrastrarla se fija ancho/alto explícitos.
-    - El tamaño se persiste POR USUARIO con `makeLocalStore` de abc_web_utils, indexado por el `size` base del diálogo, y se reaplica al abrir el siguiente diálogo del mismo tamaño.
+    - La ventana de dialog del core ya es MOVIBLE, pero NO redimensionable: `.modal-content` toma su ancho del tamaño fijo (`modal-sm/md/lg/xl`) del `.modal-dialog` 
+      y no se puede estirar.
+    - Este parche le agrega una agarradera en la esquina inferior derecha del `.modal-content`; al arrastrarla se fija ancho/alto.
+    - El tamaño se persiste POR USUARIO con `makeLocalStore` de abc_web_utils, indexado por el `size` base del diálogo, 
+      y se reaplica al abrir el siguiente diálogo del mismo tamaño.
 
 Diseño:
-    - Estado reactivo (`useState`) para que el tamaño viaje por el getter `contentStyle` (único punto de estilo dinámico que el core aplica a `.modal-content` vía t-att-style). Así los re-render del core —al arrastrar la cabecera o al apilar diálogos— NO borran el tamaño.
-    - Parche aditivo y reversible (`applyPatchOnce` de abc_web_utils):siempre llama a super y puede deshacerse (tests HOOT / desinstalar).
-    - La agarradera se inyecta en el DOM en `onMounted` (sin tocar el template QWeb del core) y toda la mecánica visual vive en el SCSS.
+    - Estado reactivo (`useState`) para que el tamaño viaje por el getter `contentStyle` 
+      (único punto de estilo dinámico que el core aplica a `.modal-content` vía t-att-style). Así los re-render del core NO borran el tamaño.
+    - Parche aditivo y reversible: siempre llama a super y puede deshacerse (tests HOOT / desinstalar).
+    - La agarradera se inyecta en el DOM en `onMounted` (sin tocar el template QWeb del core) y todo lo visual vive en el SCSS.
 */
 
 import { Dialog } from "@web/core/dialog/dialog";
@@ -22,7 +25,7 @@ import { _t } from "@web/core/l10n/translation";
 import { applyPatchOnce } from "@abc_web_utils/core/patch_utils";
 import { makeLocalStore } from "@abc_web_utils/core/local_store";
 
-// Clase-gancho que marca un `.modal-content` ya redimensionado. 
+// Clase que marca un `.modal-content` ya redimensionado. 
 export const RESIZED_CLASS = "o_abc_resized";
 // Clase de la agarradera de la esquina. 
 export const HANDLE_CLASS = "o_abc_resize_handle";
@@ -48,7 +51,7 @@ applyPatchOnce("abc_dialog_resize_free.Dialog", Dialog.prototype, {
         onMounted(() => this._abcSetupResize());
     },
 
-    //Extiende el estilo dinámico de `.modal-content`: conserva lo que calcula el core (top/left del arrastre) y añade ancho/alto cuando el usuario ya redimensionó.
+    //Extiende el estilo dinámico de `.modal-content`: conserva lo que calcula el core de odoo y añade ancho/alto cuando el usuario ya redimensionó.
     get contentStyle() {
         let style = super.contentStyle;
         const { width, height } = this._abcSize;
@@ -61,7 +64,7 @@ applyPatchOnce("abc_dialog_resize_free.Dialog", Dialog.prototype, {
         return style;
     },
 
-    // Inyecta la agarradera y engancha el arrastre de redimensión. 
+    // Mete la agarradera y engancha el arrastre de redimensión. 
     _abcSetupResize() {
         const modalEl = this.modalRef && this.modalRef.el;
         if (!modalEl) {

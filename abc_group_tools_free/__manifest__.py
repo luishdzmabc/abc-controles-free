@@ -5,12 +5,22 @@
     "summary": "Expand all / collapse all buttons and per-group record "
     "counters on grouped list and kanban views",
     "description": """
-        Small free convenience hook for grouped views (part of the ABC controls line):
+        Free convenience module for grouped views (part of the ABC controls line):
 
         * Adds "Expand all" / "Collapse all" buttons on any grouped list or kanban view, so you fold/unfold every group with a single click instead of one by one.
         * Adds an ABC record-count pill badge on each group header (list group rows and kanban columns).
 
-        Purely additive frontend (reversible patches over the core renderers via abc_web_utils): installing it changes no default behavior beyond the two buttons and the badge, and it has zero settings. Uninstalling leaves no trace.
+        Pure design: installing it changes no default behavior beyond the two buttons and the badge,
+        and it has zero settings. Uninstalling leaves no trace.
+
+        ---
+
+        Modulo gratuito de conveniencia para vistas agrupadas (parte de la línea de controles ABC):
+
+        * Agrega botones "Expandir todo" / "Colapsar todo" en cualquier vista de lista o kanban agrupada, para plegar/desplegar todos los grupos con un solo clic en vez de uno por uno.
+        * Agrega una píldora con el conteo de registros de marca ABC en cada encabezado de grupo (filas de grupo en lista y columnas en kanban).
+
+        Puramente diseno: instalarlo no cambia ningún comportamiento por defecto más allá de los dos botones y la píldora, y no tiene ajustes. Desinstalarlo no deja rastro.
     """,
     "version": "19.0.1.0.0",
     "category": "ABC/Free",

@@ -1,8 +1,8 @@
-# ABC Group Tools (Free) (`abc_group_tools_free`)
+# ABC Group Tools (Free) 
 
-Gancho gratuito de la **línea de controles ABC** para Odoo 19 Community. Añade dos comodidades a las vistas **agrupadas**, sin ninguna configuración:
+Modulo gratuito de la **línea de controles ABC** para Odoo 19 Community. Añade dos comodidades a las vistas **agrupadas**, sin ninguna configuración:
 
-- Botones **Expand all / Collapse all** en listas y kanban agrupados: pliega o despliega todos los grupos de un clic, en vez de uno por uno.
+- Agrega los botones **Expand all / Collapse all** en las listas y el kanban al estar agrupados: pliega o despliega todos los grupos de un clic, en vez de uno por uno.
 - Una **píldora con el conteo de registros** por grupo (encabezado de grupo en lista y columna en kanban), con la marca ABC.
 
 - **Licencia:** LGPL-3 · **Autor:** ABC · **Versión:** 19.0.1.0.0
@@ -10,24 +10,24 @@ Gancho gratuito de la **línea de controles ABC** para Odoo 19 Community. Añade
 
 ## Cómo funciona
 
-Es **frontend puro y aditivo**: parchea `ListRenderer` y `KanbanRenderer` del core reutilizando `applyPatchOnce` de `abc_web_utils` (patches reversibles, un solo `patch()` por objetivo) y hereda las plantillas del core con `t-inherit` en modo `extension`. No sobreescribe ningún método nativo, no declara modelos de negocio y **no tiene ajustes**: se activa al instalar y desinstalar no deja rastro.
+Es **Diseno puro y aditivo**: Le agrega funciones nuevas a las pantallas de lista y de tablero de Odoo, reutilizando una misma pieza de código compartida para no repetirla en cada una. (Los cambios son reversibles) y hereda las plantillas de odoo core. No sobreescribe ningún método nativo, no declara modelos de negocio y **no tiene ajustes**: se activa al instalar y desinstalar no deja rastro.
 
 Puntos de anclaje verificados contra la imagen `odoo:19.0`:
 
-| Plantilla del core | Qué se añade |
-|---|---|
-| `web.ListRenderer` | barra de botones antes de `<table t-ref="table">` (solo si `props.list.isGrouped`) |
-| `web.ListRenderer.GroupRow` | píldora de conteo tras el `o_group_caret` |
-| `web.KanbanRenderer` | barra de botones dentro de `o_kanban_renderer` |
-| `web.KanbanHeader` | píldora de conteo tras el título de la columna |
+## Qué se añade 
 
-Ambos renderers exponen el mismo contrato (`props.list.groups`, `group.isFolded`, `group.toggle()`), así que expandir/colapsar recorre los grupos de primer nivel y alterna solo los que hacen falta.
+- **Barra de botones** en la lista, solo cuando la lista esta agrupada 
+-  **píldora de conteo** en cada grupo
+-  **Barra de botones** dentro de la vista **kanban** 
+-  **píldora de conteo** tras el título de la columna 
+
+Ambos renderers exponen el mismo contrato, así que expandir/colapsar recorre los grupos de primer nivel y alterna solo los que hacen falta.
 
 ## Testing
 
-- `static/tests/group_tools.test.js` — suite **HOOT**: monta lista y kanban agrupados con `mountView` y verifica que el patch aplica (botones + píldora) y que expandir/colapsar todo opera sobre los grupos.
-- `tests/test_js.py` — `HttpCase` que corre la suite HOOT en el navegador.
-- `tests/test_install.py` — smoke `TransactionCase` sin navegador.
+- **Prueba de pantalla**: Simula una lista y kanban agrupados y revisa que los botones + píldora aparezcan junto con los botones expandir/colapsar, todo opera sobre los grupos.
+- **Prueba de Navegador**: Corre la prueba anterior dentro de una pantalla de navegador real, para verificar que funciona ahi que corre la suite HOOT en el navegador.
+- **Prueba rapida de instalacion**: confirma que el modulo se instala sin errores .
 
 ```bash
 odoo-bin -d <db> -i abc_group_tools_free \
@@ -36,4 +36,4 @@ odoo-bin -d <db> -i abc_group_tools_free \
 
 ## Parte de la línea de controles ABC
 
-Este es un control **gratuito (gancho)** de la suite ABC. Comparte la infraestructura común del módulo base `abc_web_utils` con el resto de controles de pago de la línea (por ejemplo `abc_list_totals` `abc_kanban_designer`). Escríbenos en `https://abcsas.com`.
+Este es un control **gratuito** de ABC. Comparte la infraestructura común del módulo base `abc_web_utils` con el resto de controles de pago de la línea. Escríbenos en `https://abcsas.com`.

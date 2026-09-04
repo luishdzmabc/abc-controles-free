@@ -2,7 +2,8 @@
 Copyright (C) 2026 ABC S&S (https://abcsas.com).
 License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
 
-Tests HOOT del gancho gratuito: montan una vista agrupada real con ORM mockeado y verifican que el patch aditivo aplica (botones + píldora de conteo presentes) y que expandir/colapsar todo opera sobre los grupos del core.
+Tests HOOT del gancho gratuito: montan una vista agrupada real con ORM mockeado y verifican que el patch aditivo aplica (botones + píldora de conteo presentes) 
+y que expandir/colapsar todo opera sobre los grupos del core.
 */
 
 import { describe, expect, test } from "@odoo/hoot";
@@ -56,7 +57,7 @@ describe("abc_group_tools_free", () => {
                 arch: LIST_ARCH,
                 groupBy: ["category"],
             });
-            // Botones del gancho presentes.
+            // Botones presentes.
             expect(".o_list_renderer .o_abc_expand_all").toHaveCount(1);
             expect(".o_list_renderer .o_abc_collapse_all").toHaveCount(1);
             // Una píldora de conteo por grupo (2 grupos: X, Y).

@@ -2,7 +2,8 @@
 Copyright (C) 2026 ABC (https://abcsas.com).
 License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).																		  
 
-Estilos del gancho de diálogos redimensionables. Todo cuelga de `.modal-content` (el cuadro del diálogo) y solo actúa cuando el JS inyecta la agarradera o marca el nodo como redimensionado.
+Estilos de diálogos redimensionables. Todo cuelga de `.modal-content` (el cuadro del diálogo) y solo actúa cuando el JS le mete la agarradera 
+o marca el nodo como redimensionado.
 */
 
 // El `.modal-content` de Bootstrap ya es position:relative, pero lo reforzamos para anclar la agarradera con seguridad.
@@ -35,7 +36,7 @@ Estilos del gancho de diálogos redimensionables. Todo cuelga de `.modal-content
     }
 }
 
-// Cuando el usuario redimensiona, liberamos el ancho fijo que impone el tamaño base (`modal-sm/md/lg/xl`) del `.modal-dialog` para que mande el ancho explícito del `.modal-content`.
+// Cuando el usuario redimensiona, liberamos el ancho fijo que pone el tamaño base (`modal-sm/md/lg/xl`) del `.modal-dialog` para que mande el ancho  del `.modal-content`.
 .modal-dialog:has(> .modal-content.o_abc_resized) {
     max-width: none;
     width: fit-content;

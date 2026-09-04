@@ -2,10 +2,10 @@
 Copyright (C) 2026 ABC (https://abcsas.com).
 License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).																  
 
-Tests HOOT del gancho de diálogos redimensionables. Montan un Dialog real del core y verifican:																	  
-    - que el parche aditivo inyecta la agarradera en `.modal-content`;
-    - que redimensionar (mover la agarradera) fija ancho/alto en el estilo inline del cuadro y marca el nodo como redimensionado;															
-    - que el tamaño se persiste y se reaplica en un diálogo posterior.
+Tests HOOT de diálogos redimensionables. Montan un Dialog real del core y checan:																	  
+    - que el parche mete la agarradera en `.modal-content`;
+    - que mover la agarradera fija ancho/alto en el estilo inline del cuadro y marca el nodo como redimensionado;															
+    - que el tamaño se queda y se reaplica posteriormente.
 */
 
 import { describe, destroy, expect, test } from "@odoo/hoot";
