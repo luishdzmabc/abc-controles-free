@@ -6,11 +6,19 @@
     "description": """
         Modulo gratuito de la línea de controles ABC.
 
-        Hace **redimensionables** las ventanas de los diálogos modales del cliente web: aparece una agarradera en la esquina inferior derecha del cuadro; al arrastrarla el diálogo cambia de ancho y alto. 
+        Hace **redimensionables** las ventanas de los diálogos modales del cliente web: aparece una agarradera en la esquina inferior derecha del cuadro; al arrastrarla el diálogo cambia de ancho y alto.
         El tamaño elegido se **recuerda por usuario** y se reaplica la próxima vez que se abre un diálogo del mismo tamaño base.
 
-        Módulo mínimo: cero configuración, cero modelos de negocio. Puro cambio visual, no cambia ningún dato ni comportamiento del ambiente. 
-        Se activa al instalar y se desactiva al desinstalar.
+        Cero configuración, cero modelos de negocio. Puro cambio visual, no cambia ningún dato ni comportamiento del ambiente. Se activa al instalar y se desactiva al desinstalar.
+
+        ---
+
+        Free module of the ABC controls line.
+
+        Makes the web client's modal dialogs **resizable**: a handle appears in the bottom-right corner of the box; dragging it changes the dialog's width and height.
+        The chosen size is **remembered per user** and reapplied the next time a dialog of the same base size is opened.
+
+        Zero configuration, zero business models. Purely a visual change, it does not change any data or environment behavior. It activates on install and deactivates on uninstall.
     """,
     "version": "19.0.1.0.0",
     "category": "ABC/Free",

@@ -12,6 +12,15 @@
         groupable by document model, activity type or deadline, with a one-click "Mark done".
 
         Purely additive: no new models, no settings. It only adds one action, one menu and a handful of views. Uninstalling leaves no trace.
+
+        ---
+        Modulo de conveniencia gratuito (parte de la linea de controles de ABC)
+        
+        El core de Odoo te da actividades por registro y una vista "Activities" por modelo, pero no un tablero único sencillo que unifique las actividades pendientes de TODOS
+        los modelos a la vez. Este hook agrega un menú, "Mis actividades (ABC)", que abre una lista / kanban / calendario unificados filtrados al usuario actual,
+        agrupable por modelo de documento, tipo de actividad o fecha límite, con un botón de un clic "Marcar hecho".
+
+        Puramente aditivo: sin modelos nuevos, sin ajustes. Solo agrega una acción, un menú y un puñado de vistas. Desinstalarlo no deja rastro.
     """,
     "version": "19.0.1.0.0",
     "category": "ABC/Free",

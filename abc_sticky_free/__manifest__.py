@@ -12,7 +12,19 @@
         * el **pie de totales** de las vistas de lista,
         * la **barra de estado** de las vistas de formulario.
 
-        Módulo mínimo: cero configuración, cero modelos de negocio. Se activa al instalar y se desactiva al desinstalar. No cambia ningún dato ni comportamiento externo.
+        Cero configuración, cero modelos de negocio. Se activa al instalar y se desactiva al desinstalar. No cambia ningún dato ni comportamiento externo.
+
+        ---
+
+        Free module of the ABC controls line.
+
+        Sticks in place on scroll:
+
+        * the **header** of list views,
+        * the **totals footer** of list views,
+        * the **status bar** of form views.
+
+        Zero configuration, zero business models. It activates on install and deactivates on uninstall. It does not change any external data or behavior.
     """,
     "version": "19.0.1.0.0",
     "category": "ABC/Free",
