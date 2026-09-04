@@ -2,7 +2,7 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
 {
     "name": "ABC Sticky (Free)",
-    "summary": "Encabezados y pies de lista fijos + barra de estado de formulario fijo al hacer scroll",
+    "summary": "Sticky list headers and footers + sticky form status bar on scroll",
     "description": """
         Modulo gratuito de la línea de controles ABC.
 

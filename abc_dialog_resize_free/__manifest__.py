@@ -2,7 +2,7 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html).
 {
     "name": "ABC Dialog Resize (Free)",
-    "summary": "Diálogos modales redimensionables que recuerdan su tamaño por usuario",
+    "summary": "Resizable modal dialogs that remember their size per user",
     "description": """
         Modulo gratuito de la línea de controles ABC.
 
